@@ -26,6 +26,16 @@ class MainActivity : AppCompatActivity() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
             }
+
+        }
+        goButton.setOnClickListener {
+            if((!(urlEditText.text.toString().startsWith("https://")))){
+                webView.loadUrl("https://"+urlEditText.text.toString())
+            }
+            else{
+                webView.loadUrl(urlEditText.text.toString())
+            }
+
         }
 
     }
